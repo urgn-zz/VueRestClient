@@ -5,11 +5,13 @@
       Loading...
     </div>
     <div v-else>
-      Are you sure?
-      <button v-on:click="remove">Yes</button>
+      <p class="message">Are you sure?</p>
+      <div class="dialog-group">
+      <button v-on:click="remove" class="btn danger">Yes</button>
       <router-link :to="{path: '/'}" exact>
-        <button>No</button>
+        <button class="btn info">No</button>
       </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -41,3 +43,11 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.dialog-group {
+  padding: 12px 0 0 0;
+  text-align: center;
+}
+</style>

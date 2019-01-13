@@ -90,7 +90,7 @@ export default {
     padding: 9px 18px 18px 18px;
   }
   footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -100,6 +100,7 @@ export default {
     padding: 9px 0px 9px 0px;
     font-size: 12px;
     font-weight: 400;
+    margin-top: 18px;
   }
   .btn {
     border: 2px solid black;
@@ -163,5 +164,27 @@ export default {
 
   .default:hover {
     background: #e7e7e7;
+  }
+
+  .on-top {
+    float: right;
+    margin: -28px 0;
+  }
+
+  .v--modal {
+    height: 120px !important;
+  }
+
+  .message {
+    padding: 18px;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .modal-controls {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 12px;
   }
 </style>

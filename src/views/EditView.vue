@@ -2,19 +2,23 @@
   <div id="app">
     <h2>Edit user #{{ id }}</h2>
     <router-link :to="{path: '/'}" exact>
-      <button>back</button>
+      <button class="btn default on-top">Back</button>
     </router-link>
     <div v-if="loading">
       Loading...
     </div>
     <UserEditForm v-else v-bind:userData="user" v-on:submited="updateUserData"/>
     <modal name="confirmation">
-      User data was edited
-      <button v-on:click="hideConfirm">Ok</button>
+      <p class="message">User data was edited</p>
+      <div class="modal-controls">
+      <button v-on:click="hideConfirm" class="btn default">Ok</button>
+      </div>
     </modal>
     <modal name="error">
-      {{ errorMessage }}
-      <button v-on:click="hideError">OK</button>
+      <p class="message">{{ errorMessage }}</p>
+      <div  class="modal-controls">
+      <button v-on:click="hideError" class="btn default">OK</button>
+      </div>
     </modal>
   </div>
 </template>

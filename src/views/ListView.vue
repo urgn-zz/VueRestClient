@@ -2,7 +2,7 @@
   <div id="app">
     <h2>User list</h2>
     <router-link v-bind:to="{path: '/add'}" exact>
-      <button type="button" class="btn success add">Add user</button>
+      <button type="button" class="btn success on-top">Add user</button>
     </router-link>
     <UserList/>
     <modal name="confirm-removal">
@@ -33,8 +33,4 @@ export default {
 </script>
 
 <style>
-.add {
-  float: right;
-  margin: -28px 0;
-}
 </style>
