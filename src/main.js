@@ -4,13 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import Routes from './routes'
+import VModal from 'vue-js-modal'
 
-Vue.use(VueRouter);
+Vue.use(VModal)
+Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
   routes: Routes
-});
+})
 
 /* eslint-disable no-new */
 new Vue({

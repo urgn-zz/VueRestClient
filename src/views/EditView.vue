@@ -1,18 +1,76 @@
 <template>
   <div>
-    <p><b>{{ id }}</b></p>
+    <h2>Edit user #{{ id }}</h2>
     <router-link :to="{path: '/'}" exact>
       <button>back</button>
     </router-link>
+    <div v-if="loading">
+      Loading...
+    </div>
+    <UserEditForm v-else v-bind:userData="user" v-on:submited="updateUserData"/>
+    <modal name="confirmation">
+      User data was edited
+      <button v-on:click="hideConfirm">Ok</button>
+    </modal>
+    <modal name="error">
+      {{ errorMessage }}
+      <button v-on:click="hideError">OK</button>
+    </modal>
   </div>
 </template>
 
 <script>
+import UserEditForm from '../components/UserEditForm'
+import UserModel from '../models/UserModel'
+
 export default {
-  name: "EditView",
+  name: 'EditView',
+  components: {
+    UserEditForm
+  },
   data () {
     return {
-      id: this.$route.params.id
+      loading: true,
+      id: this.$route.params.id,
+      user: null,
+      errorMessage: null
+    }
+  },
+  mounted () {
+    this.fetchUserData()
+  },
+  methods: {
+    updateUserData: function (attr) {
+      this.loading = true
+      UserModel.updateAttributes(this.id, attr)
+        .then((user) => {
+          this.user = user
+          this.loading = false
+          this.$modal.show('confirmation')
+        })
+        .catch((e) => {
+          this.errorMessage = e.message
+          this.$modal.show('error')
+        })
+    },
+    hideError: function () {
+      this.$modal.hide('error')
+      this.errorMessage = null
+    },
+    fetchUserData: function () {
+      this.loading = true
+      UserModel.fetchRecord(this.id)
+        .then((user) => {
+          this.user = user
+          this.loading = false
+        })
+        .catch((e) => {
+          this.errorMessage = e.message
+          this.$modal.show('error')
+        })
+    },
+    hideConfirm: function () {
+      this.$modal.hide('confirmation')
     }
   }
 }

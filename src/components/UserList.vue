@@ -1,11 +1,24 @@
 <template>
   <div>
-    <p>Users</p>
     <table>
+      <tr>
+        <th>
+          id
+        </th>
+        <th>
+          login
+        </th>
+        <th>
+          email
+        </th>
+        <th>
+          password
+        </th>
+      </tr>
       <UserItem
         v-for="user in users"
         v-bind:user="user"
-        :key="user.id"
+        v-bind:key="user.id"
       />
     </table>
   </div>
@@ -13,6 +26,7 @@
 
 <script>
 import UserItem from './UserItem'
+import UserModel from '../models/UserModel'
 
 export default {
   name: 'UserList',
@@ -21,13 +35,24 @@ export default {
   },
   data () {
     return {
-      users: [
-        {id: 0, login: 'test', email: 'test2', password: 'pwd'},
-        {id: 1, login: 'test', email: 'test2', password: 'pwd'},
-        {id: 2, login: 'test', email: 'test2', password: 'pwd'},
-        {id: 3, login: 'test', email: 'test2', password: 'pwd'},
-        {id: 4, login: 'test', email: 'test2', password: 'pwd'}
-      ]}
+      loading: false,
+      users: []
+    }
+  },
+  mounted () {
+    this.fetchData()
+  },
+  methods: {
+    fetchData: function () {
+      this.loading = true
+      UserModel.fetchAll()
+        .then((res) => {
+          this.users = res
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    }
   }
 }
 </script>

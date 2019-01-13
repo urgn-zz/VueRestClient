@@ -1,9 +1,17 @@
 <template>
   <div id="app">
+    <h2>User list</h2>
     <router-link v-bind:to="{path: '/add'}" exact>
       <button type="button" class="btn btn-primary w-100">Add user</button>
     </router-link>
     <UserList/>
+    <modal name="confirm-removal">
+      Confirm removal of {{ idToRemove }}
+    </modal>
+    <modal name="error">
+      {{ errorMessage }}
+      <button>OK</button>
+    </modal>
   </div>
 </template>
 
@@ -14,17 +22,15 @@ export default {
   name: 'ListView',
   components: {
     UserList
+  },
+  data () {
+    return {
+      errorMessage: null,
+      idToRemove: null
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

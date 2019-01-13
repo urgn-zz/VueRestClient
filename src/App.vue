@@ -1,5 +1,13 @@
 <template>
-        <router-view></router-view>
+  <div>
+    <header>
+      <h1>User REST Api client</h1>
+    </header>
+    <router-view></router-view>
+    <footer>
+      (c) 2018
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -11,7 +19,7 @@ export default {
 </script>
 
 <style>
-  body {
-    margin: 0;
-  }
+header {
+
+}
 </style>
