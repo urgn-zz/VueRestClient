@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <h2>Remove user #{{ id }}</h2>
     <div v-if="loading">
       Loading...

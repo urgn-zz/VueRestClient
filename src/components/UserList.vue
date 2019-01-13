@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table>
+    <table class="user-table">
       <tr>
         <th>
           id
@@ -58,5 +58,24 @@ export default {
 </script>
 
 <style>
+.user-table {
+  width: 100%;
+}
 
+td {
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  padding: 4px 0 4px 0;
+  font-size: 14px;
+}
+
+th {
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  padding: 4px 0 4px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
 </style>

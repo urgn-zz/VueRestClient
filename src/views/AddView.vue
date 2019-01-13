@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <h2>Add user</h2>
     <router-link v-bind:to="{path: '/'}" exact>
       <button>back</button>

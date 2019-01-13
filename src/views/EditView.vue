@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <h2>Edit user #{{ id }}</h2>
     <router-link :to="{path: '/'}" exact>
       <button>back</button>

@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr class="row-user">
     <td>
       {{ user.id }}
     </td>
@@ -12,15 +12,15 @@
     <td>
       {{ user.password }}
     </td>
-    <td>
-      <router-link :to="{ path: `/edit/${user.id}` }" exact>
-        <button type="button" class="btn btn-primary w-100">Edit</button>
-      </router-link>
-    </td>
-    <td>
-      <router-link :to="{ path: `/remove/${user.id}` }" exact>
-        <button type="button" class="btn btn-primary w-100">Remove</button>
-      </router-link>
+    <td class="col-controls">
+      <div class="record-controls">
+        <router-link v-bind:to="{ path: `/edit/${user.id}` }" exact>
+          <button type="button" class="btn info">Edit</button>
+        </router-link>
+        <router-link v-bind:to="{ path: `/remove/${user.id}` }" exact>
+          <button type="button" class="btn danger">Remove</button>
+        </router-link>
+      </div>
     </td>
   </tr>
 </template>
@@ -33,5 +33,16 @@ export default {
 </script>
 
 <style>
+.record-controls {
+  display: table-cell;
+  float: right;
+}
 
+.col-controls {
+  width: 120px;
+}
+
+.row-user:nth-child(even)  {
+  background-color: aliceblue;
+}
 </style>
