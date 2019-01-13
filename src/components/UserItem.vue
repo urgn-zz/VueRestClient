@@ -39,7 +39,7 @@ export default {
 }
 
 .col-controls {
-  width: 120px;
+  width: 155px;
 }
 
 .row-user:nth-child(even)  {

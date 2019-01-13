@@ -110,6 +110,7 @@ export default {
     font-size: 12px;
     cursor: pointer;
     border-radius: 12px;
+    min-width: 75px;
   }
 
   /* Green */
