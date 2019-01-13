@@ -9,9 +9,6 @@
     <td>
       {{ user.email }}
     </td>
-    <td>
-      {{ user.password }}
-    </td>
     <td class="col-controls">
       <div class="record-controls">
         <router-link v-bind:to="{ path: `/edit/${user.id}` }" exact>

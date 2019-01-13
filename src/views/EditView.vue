@@ -17,7 +17,7 @@
     <modal name="error">
       <p class="message">{{ errorMessage }}</p>
       <div  class="modal-controls">
-      <button v-on:click="hideError" class="btn default">OK</button>
+        <button v-on:click="hideError" class="btn default">OK</button>
       </div>
     </modal>
   </div>

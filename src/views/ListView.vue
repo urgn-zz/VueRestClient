@@ -5,13 +5,6 @@
       <button type="button" class="btn success on-top">Add user</button>
     </router-link>
     <UserList/>
-    <modal name="confirm-removal">
-      Confirm removal of {{ idToRemove }}
-    </modal>
-    <modal name="error">
-      {{ errorMessage }}
-      <button>OK</button>
-    </modal>
   </div>
 </template>
 
@@ -22,15 +15,6 @@ export default {
   name: 'ListView',
   components: {
     UserList
-  },
-  data () {
-    return {
-      errorMessage: null,
-      idToRemove: null
-    }
   }
 }
 </script>
-
-<style>
-</style>

@@ -7,10 +7,10 @@
     <div v-else>
       <p class="message">Are you sure?</p>
       <div class="dialog-group">
-      <button v-on:click="remove" class="btn danger">Yes</button>
-      <router-link :to="{path: '/'}" exact>
-        <button class="btn info">No</button>
-      </router-link>
+        <button v-on:click="remove" class="btn danger">Yes</button>
+        <router-link :to="{path: '/'}" exact>
+          <button class="btn info">No</button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -45,7 +45,6 @@ export default {
 </script>
 
 <style>
-
 .dialog-group {
   padding: 12px 0 0 0;
   text-align: center;

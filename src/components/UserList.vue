@@ -11,9 +11,6 @@
         <th>
           email
         </th>
-        <th>
-          password
-        </th>
       </tr>
       <UserItem
         v-for="user in users"

@@ -15,7 +15,7 @@
       </div>
     </modal>
     <modal name="fail">
-      <p>{{errorMessage}}</p>
+      <p class="message">{{errorMessage}}</p>
       <div class="modal-controls">
         <button v-on:click="backToList" class="btn default">To the list</button>
         <button v-on:click="tryAgain" class="btn default">Try again</button>

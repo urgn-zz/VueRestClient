@@ -1,20 +1,18 @@
 <template>
   <div>
     <header>
-      <h1>User REST Api client</h1>
+      <h1>👥 Users</h1>
     </header>
     <router-view></router-view>
     <footer>
-      (c) 2018
+      (c) 2019
     </footer>
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {}
-  }
+  name: 'App'
 }
 </script>
 
@@ -112,80 +110,47 @@ export default {
     border-radius: 12px;
     min-width: 75px;
   }
-
-  /* Green */
   .success {
     border-color: #4CAF50;
     color: green;
   }
-
   .success:hover {
     background-color: #4CAF50;
     color: white;
   }
-
-  /* Blue */
   .info {
     border-color: #2196F3;
     color: dodgerblue
   }
-
   .info:hover {
     background: #2196F3;
     color: white;
   }
-
-  /* Orange */
-  .warning {
-    border-color: #ff9800;
-    color: orange;
-  }
-
-  .warning:hover {
-    background: #ff9800;
-    color: white;
-  }
-
-  /* Red */
   .danger {
     border-color: #f44336;
     color: red
   }
-
   .danger:hover {
     background: #f44336;
     color: white;
   }
-
-  /* Gray */
   .default {
     border-color: #e7e7e7;
     color: black;
   }
-
   .default:hover {
     background: #e7e7e7;
   }
-
   .on-top {
     float: right;
     margin: -28px 0;
   }
-
   .v--modal {
     height: 120px !important;
   }
-
   .message {
     padding: 18px;
     width: 100%;
     font-size: 16px;
-  }
-
-  .modal-controls {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: 12px;
   }
 </style>

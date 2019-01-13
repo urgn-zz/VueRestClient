@@ -5,8 +5,10 @@
       <input type="text" v-model="login" id="login" placeholder="Login"/>
       <label for="email">EMail</label>
       <input type="text" v-model="email" id="email" placeholder="EMail"/>
-      <label>Password</label>
-      <input type="password" v-model="password" id="password" placeholder="Password"/>
+      <label for="password">Password</label>
+      <input v-if="passwordShown" type="text" v-model="password" id="password" placeholder="Password"/>
+      <input v-else type="password" v-model="password" id="password" placeholder="Password"/>
+      <button class="btn info show-pass" v-on:click="togglePassword">{{ passwordShown ? 'hide' : 'show' }}</button>
       <input type="submit" class="btn success"/>
     </form>
   </div>
@@ -18,6 +20,7 @@ export default {
   props: ['userData'],
   data () {
     return {
+      passwordShown: false,
       login: (this.userData && this.userData.login) || null,
       email: (this.userData && this.userData.email) || null,
       password: (this.userData && this.userData.password) || null
@@ -31,13 +34,16 @@ export default {
         email: this.email,
         password: this.password
       })
+    },
+    togglePassword: function (event) {
+      event.preventDefault()
+      this.passwordShown = !this.passwordShown
     }
   }
 }
 </script>
 
 <style>
-  /* Style inputs */
   input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -48,15 +54,18 @@ export default {
     box-sizing: border-box;
   }
 
-  /* Style the submit button */
   input[type=submit] {
     width: 100%;
     margin: 8px 0;
     cursor: pointer;
   }
 
-  /* Add a background color to the submit button on mouse-over */
   input[type=submit]:hover {
     background-color: #45a049;
+  }
+
+  .show-pass {
+    float: right;
+    margin-top: -76px;
   }
 </style>
